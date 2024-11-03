@@ -29,10 +29,14 @@ Data Export: Export real-time statistics to CSV for further analysis.
 
 Flies gain energy from:
 
-Light (brightness in their vision cone)
-Motion detection
-Must maintain energy above 0 to survive
-Need sufficient energy to reproduce
+
+- Light (brightness in their vision cone)
+
+- Motion detection
+
+- Must maintain energy above 0 to survive.
+
+- Need sufficient energy to reproduce.
 
 ## Installation
 
