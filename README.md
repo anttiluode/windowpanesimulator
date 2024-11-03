@@ -29,7 +29,7 @@ Data Export: Export real-time statistics to CSV for further analysis.
 
 The flies gain energy from both light (brightness) and motion in their vision cone. This can be seen in the _update_energy method of the EnhancedBug class:
 
-def _update_energy(self, vision_cone: np.ndarray, want_eat: bool):
+pythonCopydef _update_energy(self, vision_cone: np.ndarray, want_eat: bool):
     # Base energy decay
     self.energy -= self.config.energy_decay
     
@@ -52,7 +52,9 @@ def _update_energy(self, vision_cone: np.ndarray, want_eat: bool):
         energy_gain = min(energy_gain, 5.0)
         
         self.energy += energy_gain
+'''
 
+        
 The flies gain energy in two ways:
 
 From brightness: The brighter the area in their vision cone, the more energy they gain (brightness * 2.0)
