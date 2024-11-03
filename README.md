@@ -27,48 +27,12 @@ Data Export: Export real-time statistics to CSV for further analysis.
 
 ## Energy System
 
-The flies gain energy from both light (brightness) and motion in their vision cone. This can be seen in the _update_energy method of the EnhancedBug class:
+Flies gain energy from:
 
-pythonCopydef _update_energy(self, vision_cone: np.ndarray, want_eat: bool):
-    # Base energy decay
-    self.energy -= self.config.energy_decay
-    
-    if want_eat:
-        # Calculate brightness in vision cone
-        brightness = np.mean(vision_cone) / 255.0  # Convert brightness to 0-1 range
-        
-        # Detect motion if we have previous frames
-        motion_energy = 0
-        if len(self.memory) > 0:
-            prev_frame = self.memory[-1]
-            diff = cv2.absdiff(vision_cone, prev_frame)
-            motion = np.mean(diff) / 255.0
-            motion_energy = motion * 10.0  # Scale up motion contribution
-        
-        # Energy gain based on environment
-        energy_gain = (brightness * 2.0) + motion_energy
-        
-        # Cap maximum energy gain
-        energy_gain = min(energy_gain, 5.0)
-        
-        self.energy += energy_gain
-'''
-
-        
-The flies gain energy in two ways:
-
-From brightness: The brighter the area in their vision cone, the more energy they gain (brightness * 2.0)
-From motion: They also gain energy from detecting motion in their field of view (motion * 10.0)
-
-The energy system works like this:
-
-Flies constantly lose energy over time (energy_decay)
-They can gain energy by "eating" (want_eat) when looking at bright areas or areas with motion
-Energy is capped to prevent unlimited accumulation
-If a fly's energy drops to zero, it dies
-Flies need sufficient energy to reproduce (configured by mating_threshold)
-
-This creates an interesting dynamic where the flies are attracted to bright areas and movement in order to survive and reproduce, simulating phototropic behavior similar to real flies.
+Light (brightness in their vision cone)
+Motion detection
+Must maintain energy above 0 to survive
+Need sufficient energy to reproduce
 
 ## Installation
 
