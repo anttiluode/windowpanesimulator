@@ -288,3 +288,37 @@ State-Based Visual Indicators: Use visual cues to represent different states or 
 ## Licence
 
 MIT Licence 
+
+## **Acknowledgements**
+
+WindowPaneSimulator leverages and adapts code from the following open-source projects:
+
+- **DiT (Diffusion Transformers):**
+  - Repository: [facebookresearch/DiT](https://github.com/facebookresearch/DiT)
+  - License: MIT License
+
+- **Diffusion Forcing:**
+  - Repository: [buoyancy99/diffusion-forcing](https://github.com/buoyancy99/diffusion-forcing)
+  - License: MIT License
+
+- **Rotary Embeddings:**
+  - Repository: [lucidrains/rotary-embedding-torch](https://github.com/lucidrains/rotary-embedding-torch)
+  - License: MIT License
+
+- **VQGAN and MAE:**
+  - Repository: [CompVis/taming-transformers](https://github.com/CompVis/taming-transformers)
+  - License: MIT License
+
+- **Vision Transformers (ViT):**
+  - Repository: [timm/timm](https://github.com/rwightman/pytorch-image-models)
+  - License: Apache License 2.0
+
+- **Einops:**
+  - Repository: [rwightman/einops](https://github.com/rwightman/einops)
+  - License: MIT License
+
+- **Other Dependencies:**
+  - **PyTorch:** [pytorch/pytorch](https://github.com/pytorch/pytorch) - BSD License
+  - **OpenCV:** [opencv/opencv](https://github.com/opencv/opencv) - BSD License
+  - **Tkinter:** Standard Python Library
+  - **Matplotlib:** [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) - Matplotlib License
