@@ -1,0 +1,6 @@
+tk
+opencv-python
+numpy
+Pillow
+torch
+einops
